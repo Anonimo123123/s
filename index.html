@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu é baitola mano?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff0066;
+        }
+
+        .button {
+            font-size: 2rem;
+            padding: 10px 20px;
+            margin: 20px;
+            border: 2px solid #ff0066;
+            background-color: white;
+            color: #ff0066;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .button:hover {
+            background-color: #ff0066;
+            color: white;
+        }
+
+        #noButton {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tu é baitola mano?</h1>
+
+    <button class="button" id="yesButton">Sim</button>
+    <button class="button" id="noButton">Não</button>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+
+        // Função para mover o botão "Não" para uma nova posição aleatória
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        // Redireciona para o link do YouTube ao clicar no botão "Sim"
+        yesButton.addEventListener('click', () => {
+            window.location.href = "https://www.youtube.com/watch?v=PEmuCg3VdcY";
+        });
+    </script>
+</body>
+</html>
